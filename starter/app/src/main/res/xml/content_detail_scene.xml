@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+<!-- A transition describes an animation via start and end state -->
+    <Transition
+        app:constraintSetStart="@+id/start"
+        app:constraintSetEnd="@+id/end"
+        app:duration="2000"
+        app:autoTransition="animateToEnd">
+
+    </Transition>
+
+    <!-- Constraints to apply at the start of the animation -->
+    <ConstraintSet android:id="@+id/start">
+       <!-- <Constraint
+            android:id="@+id/filename_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/file_name" />-->
+        <Constraint
+            android:id="@+id/file_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            app:layout_constraintStart_toEndOf="@+id/filename_label"
+            app:layout_constraintTop_toTopOf="@+id/filename_label" >
+            <CustomAttribute
+                motion:attributeName="Crossfade"
+                motion:customFloatValue="0" />
+        </Constraint>
+
+      <!--  <Constraint
+            android:id="@+id/status_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/status_desc"/>-->
+
+
+        <Constraint
+            android:id="@+id/status_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            app:layout_constraintStart_toStartOf="@+id/file_name"
+            app:layout_constraintTop_toTopOf="@+id/status_label" >
+        <CustomAttribute
+            motion:attributeName="Crossfade"
+            motion:customFloatValue="0" />
+    </Constraint>
+
+
+
+    </ConstraintSet>
+
+    <!-- Constraints to apply at the end of the animation -->
+    <ConstraintSet android:id="@+id/end">
+       <!-- <Constraint
+            android:id="@+id/filename_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />-->
+        <Constraint
+            android:id="@+id/file_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            app:layout_constraintStart_toEndOf="@+id/filename_label"
+            app:layout_constraintTop_toTopOf="@+id/filename_label" >
+        <CustomAttribute
+            motion:attributeName="Crossfade"
+            motion:customFloatValue="1" />
+        </Constraint>
+
+        <!--<Constraint
+            android:id="@+id/status_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/file_name"/>-->
+
+
+        <Constraint
+            android:id="@+id/status_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            app:layout_constraintStart_toStartOf="@+id/file_name"
+            app:layout_constraintTop_toTopOf="@+id/status_label" >
+        <CustomAttribute
+            motion:attributeName="Crossfade"
+            motion:customFloatValue="1" />
+        </Constraint>
+    </ConstraintSet>
+
+</MotionScene>
